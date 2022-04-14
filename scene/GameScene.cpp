@@ -20,6 +20,16 @@ void GameScene::Initialize() {
 	textureHandle_ = TextureManager::Load("mario.jpg");
 	sprite_ = Sprite::Create(textureHandle_, {100, 50});
 	model_ = Model::Create();
+	//X,Y、Z方向のスケーリングを設定
+	worldTransform_.scale_ = {5.0f, 5.0f, 5.0f};
+
+	//X,Y,Z軸周りの回転角を設定
+	worldTransform_.rotation_ = {0.0f, XM_PI / 4.0f, 0.0f};
+
+	//X,Y,Z軸周りの平行移動を設定
+	worldTransform_.translation_ = {0.0f, 10.0f, 0.0f};
+
+
 	//ワールドトランスフォームの初期化
 	worldTransform_.Initialize();
 	//ビュープロジェクションの初期化
@@ -44,7 +54,7 @@ void GameScene::Update() {
 	//音声停止
 		audio_->StopWave(voiceHandle_);
 	}
-	debugText_->Print("kaizokuou ni oreha naru.", 50, 50, 1.0f);
+	debugText_->Print("kaizokuou ni oreha naru.", 50, 30, 1.0f);
 	//書式指定つき表示
 	debugText_->SetPos(50, 70);
 	debugText_->Printf("year:%d", 2001);
@@ -97,7 +107,8 @@ void GameScene::Draw() {
 	/// <summary>
 	/// ここに前景スプライトの描画処理を追加できる
 	/// </summary>
-	sprite_->Draw();
+	
+	//sprite_->Draw();
 
 	// デバッグテキストの描画
 	debugText_->DrawAll(commandList);
