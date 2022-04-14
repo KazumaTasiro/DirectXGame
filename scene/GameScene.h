@@ -59,6 +59,7 @@ class GameScene {
 	uint32_t voiceHandle_ = 0;
 	//値を表示したい変数
 	int32_t value_= 0;
+
 	
 	void Draw();
 
@@ -67,6 +68,10 @@ class GameScene {
 	Input* input_ = nullptr;
 	Audio* audio_ = nullptr;
 	DebugText* debugText_ = nullptr;
+	DebugText* debugTranslation_ = nullptr;
+	DebugText* debugRotation_ = nullptr;
+	DebugText* debugScale_ = nullptr;
+
 
 	/// <summary>
 	/// ゲームシーン用
