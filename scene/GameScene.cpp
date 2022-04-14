@@ -37,11 +37,11 @@ void GameScene::Initialize() {
 	worldTransform_.Initialize();
 	//ビュープロジェクションの初期化
 	viewProjection_.Initialize();
-	//サウンドデータ読み込み
-	soundDataHandle_ = audio_->LoadWave("se_sad03.wav");
-	//音声再生
-	audio_->PlayWave(soundDataHandle_);
-	voiceHandle_ = audio_->PlayWave(soundDataHandle_, true);
+	////サウンドデータ読み込み
+	//soundDataHandle_ = audio_->LoadWave("se_sad03.wav");
+	////音声再生
+	//audio_->PlayWave(soundDataHandle_);
+	//voiceHandle_ = audio_->PlayWave(soundDataHandle_, true);
 }
 
 void GameScene::Update() {
